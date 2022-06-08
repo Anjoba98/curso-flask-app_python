@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2 style="text-align: center;">Lista de Filmes</h2>
+<hr>
+<div class="row">    
+    {% for filme in filmes %}
+    <div class="col-md-3"
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src='https://image.tmdb.org/t/p/w500{{filme.poster_path}}' alt="Poster não encontrado">
+            <div class="card-body">
+            <h5 class="card-title">{{filme.title}}</h5>
+            <p class="card-text">{{filme.overview}}</p>
+            <hr>
+            <h5>Nota média: <span class="badge bg-primary">{{filme.vote_average}}</span></h5>
+        </div>
+    </div>   
+    {% endfor %}
+    
+</div>
+{% endblock conteudo %}
+
+

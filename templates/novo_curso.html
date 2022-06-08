@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block conteudo %}  
+<h2 style="text-align: center;">Criar Cursos</h2>
+<hr>
+{%- for mensagem in get_flashed_messages() %}
+    <div class="alert alert-danger">
+        {{ mensagem }}
+    </div>
+{%- endfor %}
+<form action="{{url_for("criar_curso")}}" method="POST" class="form-control">
+    <labeL>Nome</label>
+    <input class="form-control" type="text" name="nome" placeholder="Nome do curso" >
+    <label>Descrição</label>
+    <input class="form-control" type="text" name="descricao" placeholder="Descrição do curso" >
+    <label>Carga Horária</label>
+    <input class="form-control" type="number" name="ch" placeholder="Carga horária do curso" >
+    <br>
+    <button class="btn btn-success">Adicionar</button>
+    </form>
+{% endblock conteudo %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2 style="text-align: center; color:blue">Home</h2>
+<hr>
+<h4 style="text-align: center;">O que você está procurando?</h4>
+<hr>
+<p>    
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#frutas" aria-expanded="false" aria-controls="frutas" style='width:24.5%'>Frutas</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cursos" aria-expanded="false" aria-controls="frutas" style='width:24.5%'>Cursos</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#diario" aria-expanded="false" aria-controls="diario" style='width:24.5%'>Diário do Professor</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#filmes" aria-expanded="false" aria-controls="filmes" style='width:24.5%'>Filmes</button>
+</p>
+  <div class="row">
+    <div class="col">
+        <div class="collapse multi-collapse" id="frutas">
+          <div class="card card-body">           
+            Adicione frutas em uma lista!   
+            <hr>        
+            <a href ="{{url_for('lista_frutas')}}" class="btn btn-outline-primary" style="width:100%">Vá para a sessão Frutas</button></a>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="collapse multi-collapse" id="cursos">
+          <div class="card card-body">           
+            Veja quais cursos nós temos ou crie um curso você mesmo!   
+            <hr>        
+            <a href ="{{url_for('lista_cursos')}}" class="btn btn-outline-primary" style="width:100%">Vá para a sessão Cursos</button></a>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="collapse multi-collapse" id="diario">
+          <div class="card card-body">
+            Salve o nome e a nota do seu aluno!
+            <hr>        
+            <div><a href ="{{url_for('diario')}}" class="btn btn-outline-primary" style="width:100%">Vá para a sessão Diário</a></div>
+          </div>
+        </div>
+    </div>
+    <div class="col">
+      <div class="collapse multi-collapse" id="filmes">
+        <div class="card card-body">
+          Veja qual gênero você gosta mais!
+          <hr>        
+          <div><a href ="{{url_for('filmes', propriedade='mais_populares')}}" class="btn btn-outline-primary" style="width:100%">Mais populares</a></div>
+          <div><a href ="{{url_for('filmes', propriedade='kids')}}" class="btn btn-outline-primary" style="width:100%">Kids</a></div>
+          <div><a href ="{{url_for('filmes', propriedade='2010')}}" class="btn btn-outline-primary" style="width:100%">2010</a></div>
+          <div><a href ="{{url_for('filmes', propriedade='drama')}}" class="btn btn-outline-primary" style="width:100%">Drama</a></div>
+          <div><a href ="{{url_for('filmes', propriedade='tom_cruise')}}" class="btn btn-outline-primary" style="width:100%">Tom Cruise</a></div>
+          <div><a href ="{{url_for('filmes', propriedade='teatro')}}" class="btn btn-outline-primary" style="width:100%">Teatro</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock conteudo %}
